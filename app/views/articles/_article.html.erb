@@ -1,0 +1,39 @@
+
+
+<div class="row">
+  <nav class="navbar">    <div class="col-sm-8">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title"><%= link_to article.title, article_path(article), :action =>  :show %></h4>
+        <p class="card-text"><%= @markdown.render(article.body).html_safe %></p>  
+
+        <br/>
+
+        <br/>
+        <div id="HCB_comment_box"><a HTML Comment Box</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="http://www.htmlcommentbox.com/static/skins/default/skin.css" />
+            <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=470&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+          <!-- end htmlcommentbox.com -->
+
+        <% unless article.comments.empty? %>
+        <strong>Comments </strong>
+
+        <%= render article.comments %>
+        <% end %>
+        
+      </div>
+      <div class="class-footer">
+        <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-warning' %>
+        <%= link_to 'Destroy', article_path(article), :method =>  :delete, data: { confirm: 'Are you certain you want to delete this?' }, class: 'btn btn-warning' %>
+        
+        
+      </div>
+      
+      <div class="class-footer">
+      </div>
+    </div>
+  </div>
+</nav>
+</div>
+
+

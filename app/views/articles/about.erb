@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+ </head>
+ 
+<div class="container">
+
+<h1 id ="Header" style="color: grey; font-style:italic">  Vien Tran's Blog</h1>
+<h3><font face="Comic Sans MS"> My first Rails Application for CoderSchool </font></h3> 
+
+
+
+<nav class="navbar navbar-light bg-faded">
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="/articles">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/articles/new">Add New Artical</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/articles/about">About</a>
+    </li>
+  </ul>
+   <form class="form-inline pull-xs-right">
+    
+    <%= form_tag(articles_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= submit_tag "Search",  :name => nil%>
+      <% end %>
+  </form>
+</nav>
+<br>
+<div class="row">
+  <nav class="navbar">    <div class="col-sm-8">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">ABOUT ME</h4>
+      </div>
+      <div class="card-footer">
+      		<p>Xuan Vien Tran</p>
+			<p>Year of birth: 1994</p>
+			<p>Senior student at at University Of Information Technology</p>
+      <p>This is the Project for coderschool course</p>
+      </div>
+    </div>
+	
+</div>
