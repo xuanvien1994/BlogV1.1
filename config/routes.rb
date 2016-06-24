@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :comments
+  resources :comments
+  resources :comments
   get 'articles/about'
   resources :articles
   resources :articles
   resources :articles
-  resources :articles
+  resources :articles do
+   resources :comments
+end
 
 
   root 'articles#index'

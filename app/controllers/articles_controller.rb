@@ -21,7 +21,11 @@ class ArticlesController < ApplicationController
   def show
     # @article.view += 1
     # @article.save
-    # @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    # @article = Article.find(params[:id])
+    # @user_who_commented = @current_user
+    # @comment = Comment.build_from( @article, @user_who_commented.id, "Hey guys this is my comment!" )
+    
   end
 
   # GET /articles/new

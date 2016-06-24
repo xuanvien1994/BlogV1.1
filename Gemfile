@@ -22,7 +22,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'acts_as_commentable'
+gem 'acts_as_commentable_with_threading'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'redcarpet'
 gem 'rails_12factor', group: 'production'
